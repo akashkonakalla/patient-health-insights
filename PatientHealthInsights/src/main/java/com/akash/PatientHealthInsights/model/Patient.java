@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -36,5 +37,10 @@ public class Patient {
 
 	@Column(nullable = false, updatable = false)
 	private LocalDate registrationDate;
+
+	@PrePersist
+	public void setRegistrationDate() {
+		registrationDate = LocalDate.now();
+	}
 
 }
