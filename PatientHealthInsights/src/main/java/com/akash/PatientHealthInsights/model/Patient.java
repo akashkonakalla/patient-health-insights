@@ -12,9 +12,13 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "patients")
+@Getter
+@Setter
 public class Patient {
 
 	@Id
@@ -35,6 +39,7 @@ public class Patient {
 	@Column(nullable = false)
 	private String disease;
 
+	@Setter(lombok.AccessLevel.NONE)
 	@Column(nullable = false, updatable = false)
 	private LocalDate registrationDate;
 
