@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,7 +30,7 @@ public class Patient {
 	@Column(nullable = false)
 	private String name;
 
-	@NotBlank(message = "Age is required")
+	@NotNull(message = "Age is required")
 	@Column(nullable = false)
 	@Min(value = 1, message = "Age must be at least 1")
 	@Max(value = 150, message = "Age cannot exceed 150")
