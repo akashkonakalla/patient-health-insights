@@ -1,11 +1,11 @@
-package com.akash.patienthealthinsights.service;
+package com.akash.PatientHealthInsights.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.akash.patienthealthinsights.model.Patient;
-import com.akash.patienthealthinsights.repository.PatientRepository;
+import com.akash.PatientHealthInsights.model.Patient;
+import com.akash.PatientHealthInsights.repository.PatientRepository;
 
 @Service
 public class PatientService {
