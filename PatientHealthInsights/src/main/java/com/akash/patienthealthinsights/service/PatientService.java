@@ -1,8 +1,8 @@
-package com.akash.PatientHealthInsights.service;
+package com.akash.patienthealthinsights.service;
 
 import java.util.List;
 
-import com.akash.PatientHealthInsights.model.Patient;
+import com.akash.patienthealthinsights.model.Patient;
 
 public interface PatientService {
 

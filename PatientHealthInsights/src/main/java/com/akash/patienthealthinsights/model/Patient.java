@@ -1,4 +1,4 @@
-package com.akash.PatientHealthInsights.model;
+package com.akash.patienthealthinsights.model;
 
 import java.time.LocalDate;
 

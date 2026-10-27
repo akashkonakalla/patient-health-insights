@@ -1,12 +1,12 @@
-package com.akash.PatientHealthInsights.service;
+package com.akash.patienthealthinsights.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.akash.PatientHealthInsights.model.Patient;
-import com.akash.PatientHealthInsights.repository.PatientRepository;
+import com.akash.patienthealthinsights.model.Patient;
+import com.akash.patienthealthinsights.repository.PatientRepository;
 
 @Service
 public class PatientServiceImpl implements PatientService {

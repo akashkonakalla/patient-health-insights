@@ -1,4 +1,4 @@
-package com.akash.PatientHealthInsights;
+package com.akash.patienthealthinsights;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
