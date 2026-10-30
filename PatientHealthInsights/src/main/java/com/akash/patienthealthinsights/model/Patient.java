@@ -1,6 +1,7 @@
 package com.akash.patienthealthinsights.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,11 +43,13 @@ public class Patient {
 
 	@Setter(lombok.AccessLevel.NONE)
 	@Column(nullable = false, updatable = false)
-	private LocalDate registrationDate;
+	private LocalDateTime registrationDate;
 
 	@PrePersist
 	public void setRegistrationDate() {
-		registrationDate = LocalDate.now();
+		if (registrationDate == null) {
+			registrationDate = LocalDateTime.now();
+		}
 	}
 
 }
