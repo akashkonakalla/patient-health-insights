@@ -1,5 +1,6 @@
 package com.akash.patienthealthinsights.model;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -65,3 +66,8 @@ public class FollowUp {
 		}
 	}
 }
+=======
+public class FollowUp {
+
+}
+>>>>>>> branch 'main' of https://github.com/akashkonakalla/patient-health-insights.git
