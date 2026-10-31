@@ -1,7 +1,7 @@
 package com.akash.patienthealthinsights.model;
 
-import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -52,7 +52,7 @@ public class FollowUp {
 
 	@Column(nullable = false, updatable = false)
 	@Setter(AccessLevel.NONE)
-	private Instant createdAt;
+	private LocalDateTime createdAt;
 
 	@PrePersist
 	public void initializeFields() {
@@ -61,7 +61,7 @@ public class FollowUp {
 		}
 
 		if (createdAt == null) {
-			createdAt = Instant.now();
+			createdAt = LocalDateTime.now();
 		}
 	}
 }
