@@ -15,8 +15,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,37 +28,34 @@ public class FollowUp {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Setter(AccessLevel.NONE)
 	private Integer id;
 
-	@NotNull(message = "Patient is required")
+	@NotNull(message = "Scheduled date is required")
+	@Column(nullable = false)
+	private LocalDate scheduledDate;
+
+	@NotBlank(message = "Follow-up purpose is required")
+	@Column(nullable = false, length = 255)
+	private String purpose;
+
+	@Column(columnDefinition = "TEXT")
+	private String notes;
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 20)
+	private FollowUpStatus status;
+
+	@Column
+	private LocalDateTime completedAt;
+
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "patient_id", nullable = false)
 	private Patient patient;
 
-	@NotNull(message = "Follow-up date is required")
-	@Column(name = "follow_up_date", nullable = false)
-	private LocalDate followUpDate;
-
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private FollowUpStatus status = FollowUpStatus.PENDING;
-
-	@Column(length = 500)
-	private String notes;
-
-	@Column(nullable = false, updatable = false)
-	@Setter(AccessLevel.NONE)
-	private LocalDateTime createdAt;
-
 	@PrePersist
-	public void initializeFields() {
+	public void initializeFollowUp() {
 		if (status == null) {
 			status = FollowUpStatus.PENDING;
-		}
-
-		if (createdAt == null) {
-			createdAt = LocalDateTime.now();
 		}
 	}
 }
