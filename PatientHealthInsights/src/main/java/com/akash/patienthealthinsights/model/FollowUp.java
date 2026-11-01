@@ -1,6 +1,5 @@
 package com.akash.patienthealthinsights.model;
 
-<<<<<<< HEAD
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -17,7 +16,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,12 +40,10 @@ public class FollowUp {
 	@Column(name = "follow_up_date", nullable = false)
 	private LocalDate followUpDate;
 
-	@NotNull(message = "Follow-up status is required")
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private FollowUpStatus status = FollowUpStatus.PENDING;
 
-	@Size(max = 500, message = "Notes cannot exceed 500 characters")
 	@Column(length = 500)
 	private String notes;
 
@@ -66,8 +62,3 @@ public class FollowUp {
 		}
 	}
 }
-=======
-public class FollowUp {
-
-}
->>>>>>> branch 'main' of https://github.com/akashkonakalla/patient-health-insights.git
