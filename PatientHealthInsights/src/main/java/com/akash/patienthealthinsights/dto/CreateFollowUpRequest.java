@@ -18,11 +18,11 @@ public class CreateFollowUpRequest {
 	@NotNull(message = "Patient ID is required")
 	private Integer patientId;
 
-	@NotNull(message = "Scheduled Date is required")
+	@NotNull(message = "Scheduled date is required")
 	@FutureOrPresent(message = "Scheduled date cannot be in the past")
 	private LocalDate scheduledDate;
 
-	@NotBlank(message = "Follow-up purpose is requied")
+	@NotBlank(message = "Follow-up purpose is required")
 	@Size(max = 255, message = "Purpose cannot exceed 255 characters")
 	private String purpose;
 
